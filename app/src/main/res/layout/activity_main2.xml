@@ -12,6 +12,7 @@
     tools:context="com.example.leechaelin.hw_3.Main2Activity">
 
     <TabHost
+        android:id="@+id/tabhost"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="1">
@@ -72,6 +73,7 @@
                             android:id="@+id/edittext2"/>
 
                         <Button
+                            android:onClick="myClick"
                             android:layout_margin="10dp"
                             android:background="#703633"
                             android:text="BMI 계산 결과 "
@@ -113,7 +115,14 @@
                             android:layout_height="wrap_content"
                             android:id="@+id/edittext4"
                             android:background="#f9e8e8"/>
+                        <EditText
+                            android:layout_margin="20dp"
+                            android:id="@+id/edittext5"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="계산결과가 없습니다. "/>
                         <Button
+                            android:onClick="myClick"
                             android:layout_margin="10dp"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
@@ -123,6 +132,7 @@
                             android:id="@+id/button2"/>
 
                         <Button
+                            android:onClick="myClick"
                             android:layout_margin="10dp"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
