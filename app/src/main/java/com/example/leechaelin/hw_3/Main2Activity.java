@@ -24,35 +24,40 @@ public class Main2Activity extends AppCompatActivity {
         e1 = (EditText)findViewById(R.id.edittext);
         e2 = (EditText)findViewById(R.id.edittext2);
         e3 = (EditText)findViewById(R.id.edittext3);
-
+        t1 = (TextView)findViewById(R.id.text);
+        t2 = (TextView)findViewById(R.id.text2);
         b1 = (Button)findViewById(R.id.button);
         b2 = (Button)findViewById(R.id.button2);
         b3 = (Button)findViewById(R.id.button3);
 
         th.setup();
-
-        TabHost.TabSpec tab1 =th.newTabSpec("A").setIndicator("BMI 계산기 ").setContent(new TabHost.TabContentFactory(){
-            public View createTabContent(String tag){
-                View v = View.inflate(Main2Activity.this,R.layout.activity_bmi,null);
-                return v;
-            }
-        });
+        TabHost.TabSpec tab1= th.newTabSpec("A").setContent(R.id.tab1).setIndicator("BMI 계산기 ");
         th.addTab(tab1);
 
-        TabHost.TabSpec tab2 = th.newTabSpec("B").setIndicator("면적 계산기").setContent(new TabHost.TabContentFactory(){
-
-            public View createTabContent(String tag){
-                View view = View.inflate(Main2Activity.this,R.layout.activity_area,null);
-                return view;
-            }
-        });
+        TabHost.TabSpec tab2= th.newTabSpec("B").setContent(R.id.tab2).setIndicator("평수 계산기");
         th.addTab(tab2);
+//        TabHost.TabSpec tab1 =th.newTabSpec("A").setIndicator("BMI 계산기 ").setContent(new TabHost.TabContentFactory(){
+//            public View createTabContent(String tag){
+//                View v = View.inflate(Main2Activity.this,R.layout.activity_bmi,null);
+//                return v;
+//            }
+//        });
+//        th.addTab(tab1);
+//
+//        TabHost.TabSpec tab2 = th.newTabSpec("B").setIndicator("면적 계산기").setContent(new TabHost.TabContentFactory(){
+//
+//            public View createTabContent(String tag){
+//                View view = View.inflate(Main2Activity.this,R.layout.activity_area,null);
+//                return view;
+//            }
+//        });
+//        th.addTab(tab2);
     }
 
-    void myClick(View v){
+    public void myClick(View v){
         if(v.getId()==R.id.button){
             health();
-            Log.d("bmi","첫번쨰 버튼 눌렀음 ");
+            Log.d("MyTag","첫번쨰 버튼 눌렀음 ");
         }else if(v.getId()==R.id.button2){
             area();
         }else if(v.getId()==R.id.button3){
@@ -61,7 +66,7 @@ public class Main2Activity extends AppCompatActivity {
 
     }
 
-    void health(){
+    public void health(){
         String h = e1.getText().toString();
         String w = e2.getText().toString();
 
@@ -92,7 +97,7 @@ public class Main2Activity extends AppCompatActivity {
         }
     }
 
-    void area(){
+    public void area(){
         String a = e3.getText().toString();
         if(a.equals("")){
             //e5.setText(String.format(String.valueOf("값을 입력하세요.")));
@@ -103,7 +108,7 @@ public class Main2Activity extends AppCompatActivity {
             t2.setText(String.format(String.valueOf(area1)+"제곱미터 "));
         }
     }
-    void area2(){
+    public void area2(){
         String a = e3.getText().toString();
         if(a.equals("")){
             //e5.setText(String.format(String.valueOf("값을 입력하세요.")));
